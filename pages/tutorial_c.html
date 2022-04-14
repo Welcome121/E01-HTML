@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T4: Manual de Programação</title>
+</head>
+<body>
+    <h1>Manipulação de Arquivos em C</h1> 
+    <ul>
+        <li><h2>Porque manipular aquivos?</h2></li>
+        <p>
+            &nbsp &nbsp &nbsp Os arquivos permitem o <strong>armazenamento de informações</strong>. Nesse sentido
+            os dados captados durante a execução de um  programa podem ser gravados 
+            e, logo, utilizadas em uma compilação futura, assim, permitindo a criação 
+            de projetos mais robustos, como o sistema de estoque de uma pizzaria.
+        </p>
+
+        <p>&nbsp &nbsp &nbsp Na linguagem C, utilizamos dois tipos de arquivos para armanezar dados. </p>
+        <ol type="a">
+            <li>
+                Arquivo texto: guarda um array de carracteres, ou seja, uma string.<br>
+                <strong>Vantagens:</strong> fácil output de informações, pode ser interpretado idependente 
+                do código que o criou. <br>
+                <strong>Desvantagens:</strong> o processo de leitura e escrita de informações é lento em comparação 
+                com a outra opção de arquivo.
+            </li> <br>
+            <li>
+                Arquio binário: responsável por armazenar uma sequência de bits. <br>
+                <strong>Vantagens:</strong> alto desempenho: em relação tanto a leitura e escrita de dados, quanto
+                a economia de memória. <br>
+                <strong>Desvantagens:</strong> por ser uma sequência de bits, códigos distintos podem interpretar 
+                esses arquivos de maneiras diferentes. Assim, apresenta certa depêndencia do código que o criou
+            </li>
+        </ol><br>
+
+        <li><h2>Variável FILE*</h2></li>
+        <p>
+            &nbsp &nbsp &nbsp Em C, utilizamos um ponteiro do tipo FILE (presenta na biblioteca stdio.h)
+            para armazenar o endereço de um registro.<br><br>
+            <code>FILE* arquivo;</code>
+        </p>
+        <p>
+            &nbsp &nbsp &nbsp Após a criação da variável, podemos efetivamente abrir um arquivo, seja ele criado no próprio código ou pré existente na máquia.
+            Para tal, utilizamos a função fopen() que recebe como parâmetro o local que o arquivo se encontra/deve colocado e
+            o modo de abertura. <br>
+            <strong>Exemplo:</strong> O código abaixo abre o recém criado receitas.txt <br><br>
+
+            <code>
+                FILE* arquivo;<br>
+                arquivo = fopen(receitas.txt, w);
+            </code> <br><br>
+            &nbsp &nbsp &nbsp Veja abaixo outros modos de abertura de arquivo:
+        </p> <img src="../images/modosDeAbertura.jpeg" alt="F, marreco"></img>
+        <p>
+            &nbsp &nbsp &nbsp Depois de aberto o arquivo pode receber ou transmitir informações.<br>
+            <strong>Gravar/escrever:</strong> função fprintf(). Primeiro parâmetro indica o arquivo 
+            onde seram gravados os dados. Já o segundo são os dados em si.
+            <strong>Ler:</strong> função fscanf(). Primeiro parâmetro indica onde os dados seram 
+            lidos e o segundo controla a forma de extração das informações. <br><br>
+            <code>
+                float preco; <br>
+                FILE* arquivo1, arquivo2; <br>
+                arquivo1 = fopen(receitas.txt, w); <br>
+                arquivo2 = fopen(cardapio.txt, r); <br>
+                (void)fprintf(arquivo1, "Bolo de cenoura..."); <br>
+                (void)fscanf(arquivo2, "%d", &preco);
+            </code>
+        </p>
+        <p>
+            Por fim, quando acabados de utilizar nossos arquivos, devemos fechá-los. <br><br>
+
+            <code>
+                float preco; <br>
+                FILE* arquivo1, arquivo2; <br>
+                arquivo1 = fopen(receitas.txt, w); <br>
+                arquivo2 = fopen(cardapio.txt, r); <br>
+                (void)fprintf(arquivo1, "Bolo de cenoura..."); <br>
+                (void)fscanf(arquivo2, "%d", &preco); <br>
+                fclose(arquivo1); <br>
+                fclose(arquivo2); <br>
+            </code>
+        </p>
+    </ul>
+</body>
+</html>

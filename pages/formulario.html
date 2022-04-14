@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T5: Formulário de cadastro</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    
+    <main>
+        <form>
+            <fieldset>
+                <legend>Dados pessoais</legend>
+
+                <div>
+                    <label for="code">Código:</label>
+                    <input id="code" type="text"/>
+                    <br><br>
+    
+                    <label for="name">Nome:</label>
+                    <input id="name" type="text"/>
+                    <br><br>
+    
+                    <label for="password">Senha:</label>
+                    <input id="password" type="password"/>
+                    <br><br>
+    
+                    <label for="age">Idade:</label>
+                    <input id="age" type="text"/>
+                    <br><br>
+                </div>
+
+                <div>
+                    Sexo:
+                    <input type="radio" name="gender" id="male" />
+                    <label for="male">Masculino</label>
+                    <input type="radio" name="gender" id="female" />
+                    <label for="female">Feminino</label>
+                </div>
+
+                <br>
+
+                <div>
+                    Cartão de crédito:
+                    <select name="card" id="card">
+                        <option value="masterCard">Mastercard</option>
+                        <option value="visa">Visa</option>
+                        <option value="americanExpress">American Express</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Dados profissionais</legend>
+
+                <div>
+                    Cargo:
+                    <select name="formation" id="formation">
+                        <option value="junior_analist">Analista Júnior</option>
+                        <option value="full_analist">Analista Pleno</option>
+                        <option value="senior_analist">Analista Sênior</option>
+                    </select>
+                </div>
+
+                <div>
+                    Linguagens de programação:
+                    <br>
+
+                    <input type="checkbox" id="language1" />
+                    <label for="language1">C</label>
+                    <br>
+
+                    <input type="checkbox" id="language2" />
+                    <label for="language2">C#</label>
+                    <br>
+
+                    <input type="checkbox" id="language3" />
+                    <label for="language3">Python</label>
+                    <br>
+                    
+                    <input type="checkbox" id="language4" />
+                    <label for="language4">Java</label>
+                    <br>
+                </div>
+
+                <textarea name="professional_experience" id="professional_experience" cols="40" rows="5">Data início | Data fim | Empresa | Cargo</textarea>
+            </fieldset>
+
+            <div>
+                <input type="reset" value="Limpar" />
+                <input type="submit" value="Inserir" />
+            </div>
+        </form>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
